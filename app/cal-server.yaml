@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cal-server
+spec:
+  selector:
+    matchLabels:
+      app: cal-server
+  template:
+    metadata:
+      labels:
+        app: cal-server
+    spec:
+      containers:
+        - name: cal-server
+          image: cheleb/cal-server
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          imagePullPolicy: IfNotPresent

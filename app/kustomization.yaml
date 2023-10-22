@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: ziohexa
+  namespace: ziohexa
+resources:
+  - namespace.yaml
+  - postgresql.yaml
+  - postgresql-svc.yaml
+  - currencies.yaml
+  - currencies-svc.yaml
+  - cal-server.yaml
+  - cal-server-svc.yaml

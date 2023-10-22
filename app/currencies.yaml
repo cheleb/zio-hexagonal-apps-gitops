@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currencies
+spec:
+  selector:
+    matchLabels:
+      app: currencies
+  template:
+    metadata:
+      labels:
+        app: currencies
+    spec:
+      containers:
+        - name: currencies
+          image: cheleb/currency-service
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: currencies-port
+              containerPort: 8000
+          env:
+            - name: PRAVEGA_CONTROLLER_URI
+              value: tcp://192.168.1.222:9090
+            - name: DB_HOST
+              value: postgresql-svc
+            - name: POSTGRES_USERNAME
+              value: test
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secrets
+                  key: POSTGRES_PASSWORD
