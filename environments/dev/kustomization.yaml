@@ -1,8 +1,8 @@
 ---
 images:
   - name: cheleb/cal-server
-    newTag: 0.1.45
+    newTag: 0.1.46
   - name: cheleb/currency-service
-    newTag: 0.1.45
+    newTag: 0.1.46
 resources:
   - "../../app"
