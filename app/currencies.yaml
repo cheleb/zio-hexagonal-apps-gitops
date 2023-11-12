@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: currencies
-          image: cheleb/currency-service
+          image: registry.orb.local/cheleb/currency-service
           resources:
             requests:
               memory: "128Mi"
