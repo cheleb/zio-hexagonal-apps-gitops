@@ -1,8 +1,8 @@
 ---
 images:
   - name: registry.orb.local/cheleb/cal-server
-    newTag: 0.1.57
+    newTag: 0.1.58
   - name: registry.orb.local/cheleb/currency-service
-    newTag: 0.1.57
+    newTag: 0.1.58
 resources:
   - "../../app"
