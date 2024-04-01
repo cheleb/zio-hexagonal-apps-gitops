@@ -6,8 +6,8 @@ metadata:
     app: cal-server
 spec:
   ports:
-    - port: 8888
-      targetPort: 8888
+    - port: 80
+      targetPort: 80
   clusterIP: None
   selector:
     app: cal-server
